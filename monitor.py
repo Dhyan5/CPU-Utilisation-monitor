@@ -4,13 +4,11 @@ import time
 import logging
 from datetime import datetime
 
-# === Configuration ===
 CPU_THRESHOLD = 85
 GPU_THRESHOLD = 85
 CHECK_INTERVAL = 5
 LOG_FILE = "full_system_monitor.log"
 
-# === Logging Setup ===
 logging.basicConfig(
     filename=LOG_FILE,
     level=logging.INFO,
@@ -62,7 +60,6 @@ def monitor_system():
 
             print(f"Network - Sent: {net_info['bytes_sent']} bytes, Received: {net_info['bytes_recv']} bytes")
 
-            # Logging
             log_msg = (
                 f"CPU: {cpu}%, Memory: {memory}%, Disk: {disk}%, "
                 f"Net Sent: {net_info['bytes_sent']} B, Recv: {net_info['bytes_recv']} B"
@@ -71,7 +68,6 @@ def monitor_system():
                 log_msg += f", GPU Load: {gpu_info['load']}%, Temp: {gpu_info['temperature']}°C"
             logging.info(log_msg)
 
-            # Threshold Warnings
             if cpu > CPU_THRESHOLD:
                 logging.warning(f"⚠️ High CPU usage: {cpu}%")
             if gpu_info and gpu_info["load"] > GPU_THRESHOLD:
