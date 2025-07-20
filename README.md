@@ -1,6 +1,7 @@
 # CPU-Utilisation-monitor
 Gives your real time CPU,GPU and Network statistics of your computer
-To run the cpu_monitor.py install this dependency into your pc- (pip install psutil GPUtil matplotlib customtkinter)
+To run the cpu_monitor.py install this dependency into your pc- 
+(pip install psutil GPUtil matplotlib customtkinter)
 
 
 
